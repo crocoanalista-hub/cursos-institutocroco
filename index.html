@@ -1,0 +1,251 @@
+<title>Nossos Cursos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0C0C0C;
+    --surface:  #141414;
+    --border:   #1f1f1f;
+    --accent:   #C9A84C;
+    --accent-2: #3d7a5e;
+    --text-1:   #F4F6F4;
+    --text-2:   #8a9e92;
+    --text-3:   #4a5e53;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:      #f5f3ee;
+      --surface: #ffffff;
+      --border:  #e2ddd6;
+      --accent:  #B8952F;
+      --accent-2:#2d6650;
+      --text-1:  #111a14;
+      --text-2:  #5a6e62;
+      --text-3:  #9aaa9f;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg:      #f5f3ee;
+    --surface: #ffffff;
+    --border:  #e2ddd6;
+    --accent:  #B8952F;
+    --accent-2:#2d6650;
+    --text-1:  #111a14;
+    --text-2:  #5a6e62;
+    --text-3:  #9aaa9f;
+  }
+  :root[data-theme="dark"] {
+    --bg:       #0C0C0C;
+    --surface:  #141414;
+    --border:   #1f1f1f;
+    --accent:   #C9A84C;
+    --accent-2: #3d7a5e;
+    --text-1:   #F4F6F4;
+    --text-2:   #8a9e92;
+    --text-3:   #4a5e53;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 60px;
+  }
+
+  /* ── Header ── */
+  .header {
+    width: 100%;
+    max-width: 520px;
+    padding: 40px 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-divider {
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 38px);
+    font-weight: 600;
+    color: var(--text-1);
+    text-wrap: balance;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: var(--text-2);
+    text-align: center;
+    max-width: 340px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    width: 100%;
+    max-width: 520px;
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 28px;
+  }
+
+  /* ── Course list ── */
+  .courses {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .course-btn {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    background: var(--surface);
+    position: relative;
+  }
+
+  .course-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    pointer-events: none;
+  }
+
+  .course-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(201, 168, 76, 0.35);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  }
+
+  .course-btn:hover::after {
+    opacity: 0.04;
+  }
+
+  .course-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .course-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 11px;
+  }
+
+  /* WhatsApp btn — visual diferenciado */
+  .course-btn.whatsapp {
+    border-color: rgba(37, 211, 102, 0.2);
+  }
+
+  .course-btn.whatsapp:hover {
+    border-color: rgba(37, 211, 102, 0.45);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.1);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--text-3);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .course-btn { transition: none; }
+  }
+</style>
+
+<header class="header">
+  <div class="logo-badge">
+    <div class="logo-divider"></div>
+    <span class="logo-text">Instituto Croco</span>
+    <div class="logo-divider"></div>
+  </div>
+  <h1 class="headline">Nossos Cursos</h1>
+  <p class="subtitle">Escolha um dos nossos programas de formação e dê o próximo passo na sua jornada terapêutica.</p>
+</header>
+
+<div class="divider"></div>
+
+<nav class="courses" aria-label="Cursos disponíveis">
+
+  <a class="course-btn" href="https://institutocroco.com.br/psicanalise-clinica-instituto-croco/" target="_blank" rel="noopener">
+    <img src="https://institutocroco.com.br/wp-content/uploads/2025/06/5-1-1024x288.png"
+         alt="Psicanálise Clínica" loading="eager">
+  </a>
+
+  <a class="course-btn" href="https://institutocroco.com.br/atcp/" target="_blank" rel="noopener">
+    <img src="https://institutocroco.com.br/wp-content/uploads/2025/06/Psicanalise-1024x288.png"
+         alt="Aconselhamento Terapêutico e Cuidado Psicoemocional" loading="lazy">
+  </a>
+
+  <a class="course-btn" href="https://institutocroco.com.br/neurociencia-clinica/" target="_blank" rel="noopener">
+    <img src="https://institutocroco.com.br/wp-content/uploads/2025/06/4-1-1024x288.png"
+         alt="Neurociência Clínica" loading="lazy">
+  </a>
+
+  <a class="course-btn" href="https://institutocroco.com.br/e-books-gratuitos" target="_blank" rel="noopener">
+    <img src="https://institutocroco.com.br/wp-content/uploads/2024/09/Ebookkk-1024x288.png"
+         alt="E-books Gratuitos" loading="lazy">
+  </a>
+
+  <a class="course-btn" href="https://institutocroco.com.br/mini-cursos/" target="_blank" rel="noopener">
+    <img src="https://institutocroco.com.br/wp-content/uploads/2024/10/rgersvfvsbf-1024x288.png"
+         alt="Mini-cursos" loading="lazy">
+  </a>
+
+  <a class="course-btn whatsapp" href="https://wa.me/15996870808" target="_blank" rel="noopener">
+    <img src="https://institutocroco.com.br/wp-content/uploads/2024/06/4-1-1024x288.png"
+         alt="Fale conosco pelo WhatsApp" loading="lazy">
+  </a>
+
+</nav>
+
+<footer class="footer">
+  © 2025 Instituto Croco · Todos os direitos reservados
+</footer>
