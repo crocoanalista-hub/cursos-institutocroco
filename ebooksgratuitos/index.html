@@ -25,7 +25,39 @@
     align-items: center;
     justify-content: center;
     padding: 48px 16px;
-    gap: 28px;
+    gap: 24px;
+  }
+
+  .main-layout {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .col-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .col-img img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .col-form {
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 640px) {
+    .main-layout { flex-direction: column; gap: 28px; }
+    .col-img img { max-width: 260px; }
   }
 
   .logo {
@@ -58,7 +90,6 @@
     border-radius: 16px;
     padding: 32px 28px;
     width: 100%;
-    max-width: 380px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -153,30 +184,35 @@
   src="https://institutocroco.com.br/wp-content/uploads/2024/05/ok-2-e1752525529340.png"
   alt="Instituto Croco">
 
-<img src="https://institutocroco.com.br/wp-content/uploads/elementor/thumbs/mock-00001-2-qthduaugwp0kjj0nmbckngjfq07wfiurnp3l3jszvk.png"
-  alt="E-Book Introdução à Psicanálise"
-  style="width:100%;max-width:320px;border-radius:10px;border:1px solid #222;">
-
 <h1>Introdução à Psicanálise</h1>
-<p class="subtitle">Preencha o formulário abaixo e baixe seu e-book gratuito</p>
+<p class="subtitle">Preencha o formulário e baixe seu e-book gratuito</p>
 
-<!-- Formulário -->
-<div class="card" id="formBox">
-  <label>Nome <input id="nome" type="text" placeholder="Seu nome completo" required></label>
-  <label>E-mail <input id="email" type="email" placeholder="seu@email.com" required></label>
-  <label>WhatsApp <input id="whatsapp" type="tel" placeholder="(11) 99999-9999" required></label>
-  <button class="btn" id="btnEnviar" onclick="enviar()">Baixar E-book Grátis</button>
-  <div class="erro" id="erro"></div>
-</div>
-
-<!-- Pós-submit -->
-<div class="download-box" id="downloadBox">
-  <div class="check">✓</div>
-  <div>
-    <div style="font-weight:700;font-size:16px;color:var(--text-1);margin-bottom:6px">Tudo certo!</div>
-    <div style="font-size:13px;color:var(--text-2)">Seu e-book está pronto para download</div>
+<div class="main-layout">
+  <!-- Imagem -->
+  <div class="col-img">
+    <img src="https://institutocroco.com.br/wp-content/uploads/elementor/thumbs/mock-00001-2-qthduaugwp0kjj0nmbckngjfq07wfiurnp3l3jszvk.png"
+      alt="E-Book Introdução à Psicanálise">
   </div>
-  <a class="download-btn" id="linkDownload" href="#" target="_blank" rel="noopener">⬇ Baixar Agora</a>
+
+  <!-- Formulário -->
+  <div class="col-form">
+    <div class="card" id="formBox">
+      <label>Nome <input id="nome" type="text" placeholder="Seu nome completo" required></label>
+      <label>E-mail <input id="email" type="email" placeholder="seu@email.com" required></label>
+      <label>WhatsApp <input id="whatsapp" type="tel" placeholder="(11) 99999-9999" required></label>
+      <button class="btn" id="btnEnviar" onclick="enviar()">Baixar E-book Grátis</button>
+      <div class="erro" id="erro"></div>
+    </div>
+
+    <div class="download-box" id="downloadBox">
+      <div class="check">✓</div>
+      <div>
+        <div style="font-weight:700;font-size:16px;color:var(--text-1);margin-bottom:6px">Tudo certo!</div>
+        <div style="font-size:13px;color:var(--text-2)">Seu e-book está pronto para download</div>
+      </div>
+      <a class="download-btn" id="linkDownload" href="#" target="_blank" rel="noopener">⬇ Baixar Agora</a>
+    </div>
+  </div>
 </div>
 
 <a class="back" href="../">← Voltar para os cursos</a>
