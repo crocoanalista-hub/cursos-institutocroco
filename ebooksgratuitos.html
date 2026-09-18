@@ -1,0 +1,117 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Books Gratuitos – Instituto Croco</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:      #0C0C0C;
+    --surface: #141414;
+    --border:  #1f1f1f;
+    --accent:  #C9A84C;
+    --text-1:  #F4F6F4;
+    --text-2:  #8a9e92;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg:      #f5f3ee;
+      --surface: #ffffff;
+      --border:  #e2ddd6;
+      --accent:  #B8952F;
+      --text-1:  #111a14;
+      --text-2:  #5a6e62;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg:      #f5f3ee;
+    --surface: #ffffff;
+    --border:  #e2ddd6;
+    --accent:  #B8952F;
+    --text-1:  #111a14;
+    --text-2:  #5a6e62;
+  }
+  :root[data-theme="dark"] {
+    --bg:      #0C0C0C;
+    --surface: #141414;
+    --border:  #1f1f1f;
+    --accent:  #C9A84C;
+    --text-1:  #F4F6F4;
+    --text-2:  #8a9e92;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text-1);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+    gap: 40px;
+  }
+
+  .logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 400;
+    color: var(--text-1);
+    letter-spacing: -0.01em;
+  }
+
+  .ebook-btn {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .ebook-btn:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.18);
+  }
+
+  .ebook-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .back {
+    font-size: 13px;
+    color: var(--text-2);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .back:hover { color: var(--accent); }
+</style>
+
+<img class="logo"
+  src="https://institutocroco.com.br/wp-content/uploads/2024/05/ok-2-e1752525529340.png"
+  alt="Instituto Croco">
+
+<h1>E-Books:</h1>
+
+<a class="ebook-btn"
+  href="https://institutocroco.com.br/ebook-psicanalise/"
+  target="_blank" rel="noopener">
+  <img src="https://institutocroco.com.br/wp-content/uploads/2024/09/1-e1725738248938-300x120.png"
+       alt="E-Book Psicanálise">
+</a>
+
+<a class="back" href="index.html">← Voltar para os cursos</a>
